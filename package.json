@@ -1,0 +1,16 @@
+{
+  "name": "webpack2-test-project",
+  "version": "1.0.0",
+  "description": "A test Webpack 2 project ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p" 
+  },
+  "repository": "https://github.com/Em3k/webpack2-test-project.git",
+  "author": "Em3k <em3k@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.6.1"
+  }
+}
