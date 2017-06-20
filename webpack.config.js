@@ -35,9 +35,19 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif)$/i,
                 use: [
                     'file-loader?name=[name].[ext]&outputPath=assets/img/',
+                    //file-loader?name=[name].[ext]&outputPath=assets/img/svg/',
+                    'image-webpack-loader'
+                ]
+
+            },
+            {
+                test: /\.(svg)$/i,
+                use: [
+                    //'file-loader?name=[name].[ext]&outputPath=assets/img/',
+                    'file-loader?name=[name].[ext]&outputPath=assets/img/svg/',
                     'image-webpack-loader'
                 ]
 
@@ -66,6 +76,10 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             // ...
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
     ]
 }
