@@ -35,33 +35,30 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpe?g|png|gif|svg)$/i,
                 use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'assets/img',
-                            publicPath: 'assets/img'
-                        }
-                    }
+                    'file-loader?name=[name].[ext]&outputPath=assets/img/',
+                    'image-webpack-loader'
                 ]
+
             }
         ]
     },
+
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         //port: 9000,
         open: true
     },
+
     plugins: [
         extractPlugin,
         new HtmlWebpackPlugin({
             title: 'New Webpack 2 Web Project',
-            template: './src/index.ejs',
-            filename: './index.html',
-            hash: false
+            template: './src/index.html',
+            //filename: 'index.html',
+            hash: true
             // minify: {
             //     collapseWhitespace: false
             // },
