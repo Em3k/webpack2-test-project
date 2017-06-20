@@ -4,16 +4,31 @@
   "description": "A test Webpack 2 project ",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev-server": "webpack-dev-server",
+    "dev": "webpack -d",
     "prod": "webpack -p"
   },
-  "repository": "https://github.com/Em3k/webpack2-test-project.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Em3k/webpack2-test-project.git"
+  },
   "author": "Em3k <em3k@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.2",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^2.6.1"
-  }
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {}
 }
